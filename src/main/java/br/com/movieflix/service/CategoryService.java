@@ -10,18 +10,17 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
+
 public class CategoryService {
 
+
     private final CategoryRepository repository;
-
-    public CategoryService(CategoryRepository repository) {
-        this.repository = repository;
-    }
-
 
     public List<Category> findAll() {
         return repository.findAll();
     }
+
     public Optional<Category> findById(Long id) {
         return repository.findById(id);
     }
