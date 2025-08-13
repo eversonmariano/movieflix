@@ -2,17 +2,20 @@ spring:
   application:
     name: movieflix
 
+  # Configurações da fonte de dados (banco de dados)
   datasource:
     url: jdbc:postgresql://localhost:5432/movieflix
     username: admin
     password: 123456
+    # A linha abaixo geralmente não é necessária, pois o Spring Boot
+    # deduz o driver a partir da URL.
     driver-class-name: org.postgresql.Driver
 
-    jpa:
-      database-platform: org.hibernate.dialect.PostgreSQLDialect
-      show-sql: true
+  # Configurações do JPA (Hibernate)
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
 
-
-
-    flyway:
-      enabled: true
+  # Configurações do Flyway para migrações do banco
+  flyway:
+    enabled: true
